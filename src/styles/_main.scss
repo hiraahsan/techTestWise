@@ -5,10 +5,15 @@ main {
     .articleSection {
         width: 60%;
         margin-right: 55px;
-        margin-top: 50px;
+        margin-top: 60px;
         
         p {
             margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 50px;
         }
     }
 
