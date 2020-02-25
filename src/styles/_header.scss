@@ -1,4 +1,13 @@
 header {
     position: fixed;
+    height: 10vh;
     padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    background: gray;
+    width: 100%;
+
+    .stockTicker {
+        justify-self: flex-end;
+    }
 }
