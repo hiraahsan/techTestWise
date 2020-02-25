@@ -6,6 +6,11 @@ header {
     justify-content: space-between;
     background: gray;
     width: 100%;
+    top: 0;
+    left: 0;
+    right:0;
+    max-width: 1400px;
+    margin: 0 auto;
 
     .stockTicker {
         justify-self: flex-end;
