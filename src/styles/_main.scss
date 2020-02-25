@@ -1,11 +1,29 @@
 main {
     display: flex;
     line-height: 20px;
+    max-width: 1400px;
+    // position: relative;
+    margin: 0 5%;
+    // padding: 0 5%;
+
+    .moneyplantImage {
+        background-image: url(../images/moneyplant.jpg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        width: auto;
+        z-index: -1;
+    }
+
+    caption {
+        text-align: center;
+    }
     
     .articleSection {
         width: 60%;
         margin-right: 55px;
-        margin-top: 60px;
+        margin-top: 150px;
         
         p {
             margin: 20px 0;
@@ -14,6 +32,11 @@ main {
         h1 {
             font-size: 4rem;
             line-height: 50px;
+            border: 2px solid black;
+            letter-spacing: 1rem;
+            text-transform: uppercase;
+            padding: 30px 15px;
+            text-align: center;
         }
     }
 
@@ -21,9 +44,10 @@ main {
         width: 30%;
         margin-left: 55px;
         position: fixed;
-        right: 5%;
+        right: 0;
         border: 2px solid navy;
         padding: 5%;
+        margin-top: 100px;
 
         select {
             width: 100%;
