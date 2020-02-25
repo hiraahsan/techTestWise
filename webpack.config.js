@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WebPack = require("webpack");
 
 
 module.exports = {
@@ -51,6 +52,10 @@ module.exports = {
             template: "./src/index.html",
             filename: "./index.html"
         }),
+        new WebPack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
@@ -59,5 +64,10 @@ module.exports = {
         })
 
         // could have done away with using the css plugin. what it does it, it will run during production build
-    ]
+    ],
+    resolve: {
+        alias: {
+            jquery: "jquery/src/jquery"
+        }
+    }
 }
