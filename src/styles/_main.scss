@@ -1,0 +1,27 @@
+main {
+    display: flex;
+    line-height: 20px;
+    
+    .articleSection {
+        width: 60%;
+        margin-right: 55px;
+        margin-top: 50px;
+        
+        p {
+            margin: 20px 0;
+        }
+    }
+
+    .formSection {
+        width: 30%;
+        margin-left: 55px;
+        position: fixed;
+        right: 5%;
+        border: 2px solid navy;
+        padding: 5%;
+
+        select {
+            width: 100%;
+        }
+    }
+}
