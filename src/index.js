@@ -1,4 +1,5 @@
-import './styles/styles.scss'
+import './styles/styles.scss';
+
 
 const app = {}
 
@@ -12,7 +13,9 @@ let msft = document.getElementById("microsoftStocks");
 let btc = document.getElementById("bitcoinStocks");
 let google = document.getElementById("googleStocks");
 
-const resultArray = []
+let msftStatus = document.getElementById("msftStatus");
+let bitcoinStatus = document.getElementById("bitcoinStatus");
+let googleStatus = document.getElementById("googleStatus");
 
 document.getElementById("subscribe").addEventListener("submit", (event) => {
     event.preventDefault()
@@ -50,11 +53,76 @@ document.getElementById("subscribe").addEventListener("submit", (event) => {
         app.openingPrice = result['Time Series (Daily)'][newUpdatedDate]['1. open']
 
         msft.append(`${app.symbol}, ${app.closingPrice}, ${app.openingPrice}, ${app.lastRefreshed}`)
+        if (app.closingPrice - app.openingPrice >= 0) {
+            msftStatus.append("↑")
+        } else {
+            msftStatus.append("↓")
+        }
+    })
+    .catch( (error) => {
+        console.log(error)
+    })
+}
+
+const callApiGoogle = () => {
+    $.ajax({
+        url: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOGL&apikey=JQ1LE8WZCWJRAMXL_",
+        dataType: 'json',
+        contentType: "application/json",
+    })
+    .then( (result) => {
+        app.lastRefreshed = result['Meta Data']['3. Last Refreshed']
+        // console.log(app.lastRefreshed)
+        const regex = /\d{2}:\d{2}:\d{2}/g;
+        const replace = ``;
+        const updatedDate = app.lastRefreshed.replace(regex, replace)
+        let newUpdatedDate = updatedDate.replace(/\s/g, '')
+        // console.log(`regexed it`, updatedDate)
+        console.log(newUpdatedDate)
+        console.log(result['Time Series (Daily)']);
+        app.symbol = result['Meta Data']['2. Symbol'];
+        app.closingPrice = result['Time Series (Daily)'][newUpdatedDate]['4. close']
+        app.openingPrice = result['Time Series (Daily)'][newUpdatedDate]['1. open']
+
+        google.append(`${app.symbol}, ${app.closingPrice}, ${app.openingPrice}, ${app.lastRefreshed}`)
 
     })
     .catch( (error) => {
         console.log(error)
     })
 }
+
+
+const callApiBitcoin = () => {
+    $.ajax({
+        url: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=BTCUSD&apikey=JQ1LE8WZCWJRAMXL_",
+        dataType: 'json',
+        contentType: "application/json",
+    })
+    .then( (result) => {
+        app.lastRefreshed = result['Meta Data']['3. Last Refreshed']
+        console.log(app.lastRefreshed)
+        const regex = /\d{2}:\d{2}:\d{2}/g;
+        const replace = ``;
+        const updatedDate = app.lastRefreshed.replace(regex, replace)
+        let newUpdatedDate = updatedDate.replace(/\s/g, '')
+        // console.log(`regexed it`, updatedDate)
+        console.log(newUpdatedDate)
+        console.log(result['Time Series (Daily)']);
+        app.symbol = result['Meta Data']['2. Symbol'];
+        app.closingPrice = result['Time Series (Daily)'][app.lastRefreshed]['4. close']
+        app.openingPrice = result['Time Series (Daily)'][app.lastRefreshed]['1. open']
+
+        btc.append(`${app.symbol}, ${app.closingPrice}, ${app.openingPrice}, ${app.lastRefreshed}`)
+
+    })
+    .catch( (error) => {
+        console.log(error)
+    })
+}
+
+callApiBitcoin();
+
+callApiGoogle()
 
 callApi();
