@@ -12,11 +12,12 @@
 .stockTickerWrap {
     background: black;
     color: white;
-    position: fixed;
+    position: absolute;
     top: 2.5vh;
     overflow: hidden;
     width: 500px;
-    height: 50px;
+    padding: 10px 0;
+    height: auto;
     right: 0;
 
     .stockTicker {
@@ -26,10 +27,17 @@
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         animation-name: ticker;
-        animation-duration: 20s;
+        animation-duration: 30s;
 
         p {
             display: inline-block;
+            font-size: 3.2rem;
+            margin: 0 20px;
+            padding: 0 auto;
+
+            span {
+                font-weight: bolder;
+            }
         }
     }
 }

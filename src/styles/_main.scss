@@ -13,11 +13,7 @@ main {
         background-repeat: no-repeat;
         height: 300px;
         width: auto;
-        z-index: -1;
-    }
-
-    caption {
-        text-align: center;
+        margin-bottom: 20px;
     }
     
     .articleSection {
@@ -43,7 +39,6 @@ main {
     .formSection {
         width: 30%;
         margin-left: 55px;
-        position: fixed;
         right: 0;
         border: 2px solid navy;
         padding: 5%;
