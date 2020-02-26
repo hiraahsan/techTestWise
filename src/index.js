@@ -55,8 +55,12 @@ document.getElementById("subscribe").addEventListener("submit", (event) => {
         msft.append(`${app.symbol}, ${app.closingPrice}, ${app.openingPrice}, ${app.lastRefreshed}`)
         if (app.closingPrice - app.openingPrice >= 0) {
             msftStatus.append("↑")
+            $("#msftStatus").css("color", "green");
+
         } else {
             msftStatus.append("↓")
+            $("#msftStatus").css("color", "red");
+
         }
     })
     .catch( (error) => {
@@ -86,6 +90,15 @@ const callApiGoogle = () => {
 
         google.append(`${app.symbol}, ${app.closingPrice}, ${app.openingPrice}, ${app.lastRefreshed}`)
 
+        if (app.closingPrice - app.openingPrice >= 0) {
+            googleStatus.append("↑")
+            $("#googleStatus").css("color", "green");
+
+        } else {
+            googleStatus.append("↓")
+            $("#googleStatus").css("color", "red");
+
+        }
     })
     .catch( (error) => {
         console.log(error)
@@ -115,6 +128,14 @@ const callApiBitcoin = () => {
 
         btc.append(`${app.symbol}, ${app.closingPrice}, ${app.openingPrice}, ${app.lastRefreshed}`)
 
+        if (app.closingPrice - app.openingPrice >= 0) {
+            bitcoinStatus.append("↑")
+            $("#bitcoinStatus").css("color", "green");
+        } else {
+            bitcoinStatus.append("↓")
+            $("#bitcoinStatus").css("color", "red");
+
+        }
     })
     .catch( (error) => {
         console.log(error)
