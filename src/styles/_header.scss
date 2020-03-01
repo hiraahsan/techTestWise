@@ -4,7 +4,8 @@ header {
     padding-bottom: 50px;
     display: flex;
     justify-content: space-between;
-    background: gray;
+    background: lighten($juniper, 20%);
+    border-bottom: 3px solid $brunswick;
     width: 100%;
     top: 0;
     left: 0;
