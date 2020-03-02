@@ -47,12 +47,23 @@ main {
             text-transform: uppercase;
             padding: 30px 15px;
             text-align: center;
+
+            @include for-phone-only {
+                border: none;
+                text-align: initial;
+                font-size: 3rem;
+                line-height: 30px;
+                padding: 0;
+            }
         }
 
         h2 {
             text-transform: uppercase;
             font-size: 2.8rem;
             letter-spacing: 0.8rem;            line-height: 30px;
+            @include for-phone-only {
+                line-height: 25px;
+            }
 
         }
     }
@@ -111,6 +122,14 @@ main {
             padding: 5px;
             width: 100%;
             border-radius: 10px;
+
+            &:focus, &:active {
+                border: 2px solid $succulent;
+                background: $coolmint;
+                color: $brunswick;
+            }
+
+            transition: 0.3s;
 
         }
 
