@@ -13,6 +13,20 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 
+    @include for-phone-only {
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 0;
+        border: none;
+    }
+
+    svg {
+        @include for-phone-only {
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
     .stockTicker {
         justify-self: flex-end;
     }
