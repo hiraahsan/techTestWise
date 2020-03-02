@@ -15,10 +15,10 @@
     position: absolute;
     top: 2.5vh;
     overflow: hidden;
-    width: 500px;
+    width: 50%;
     padding: 10px 0;
     height: auto;
-    right: 0;
+    right: 5%;
 
     .stockTicker {
         display: inline-block;
@@ -28,6 +28,10 @@
         animation-timing-function: linear;
         animation-name: ticker;
         animation-duration: 30s;
+
+        &:hover {
+           animation-play-state: paused;
+        }
 
         p {
             display: inline-block;
