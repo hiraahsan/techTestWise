@@ -5,6 +5,7 @@ main {
     margin: 0 5%;
     @include for-tablet-portrait-up {
         flex-direction: column;
+        margin: 0;
     }
     // padding: 0 5%;
 
@@ -29,10 +30,13 @@ main {
             border: none;
             // margin: 0;
             padding: 0;
+            margin: 100px auto;
         }
 
         @include for-phone-only {
-            width: 100%;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 100px;;
         }
         
         p {
@@ -69,21 +73,35 @@ main {
     }
 
     .formSection {
-        width: 30%;
-        margin-left: 55px;
-        right: 13%;
+        width: 40%;
+        // margin-left: 55px;
+        // right: 11%;
+        left: 62%;
         display: flex;
         flex-direction: column;
         align-items: center;
         line-height: 30px;
-        padding: 5%;
+        padding: 50px;
         position: fixed;
         margin-top: 100px;
+        bottom: 5%;
+        height: 600px;
+        top: 5%;
+        background: $brunswick;
+        color: white;
+        border-radius: 20px;
+        max-width: 500px;
+
 
         @include for-tablet-portrait-up {
             width: 100%;
             position: initial;
-            margin: 0;
+            margin: 0 auto;
+            max-width: none;
+            border-radius: 0;
+            height: 550px;
+            padding: 30px 30px 0 30px;
+   
         }
 
         form {
@@ -91,6 +109,7 @@ main {
             flex-direction: column;
             align-items: center;
             width: 100%;
+            height: auto;
 
             @include for-tablet-portrait-up {
                 width: 70%;
@@ -117,9 +136,10 @@ main {
         }
 
         input {
-            border: 2px solid $brunswick;
+            border: 2px solid $succulent;
             margin: 10px 0;
             padding: 5px;
+            max-width: 300px;
             width: 100%;
             border-radius: 10px;
 
