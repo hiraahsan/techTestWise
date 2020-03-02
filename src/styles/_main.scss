@@ -3,6 +3,9 @@ main {
     line-height: 20px;
     max-width: 1400px;
     margin: 0 5%;
+    @include for-tablet-portrait-up {
+        flex-direction: column;
+    }
     // padding: 0 5%;
 
     .moneyplantImage {
@@ -17,10 +20,20 @@ main {
     
     .articleSection {
         width: 60%;
-        margin-right: 55px;
         margin-top: 150px;
         padding-right: 100px;
         border-right: 3px solid $brunswick;
+
+        @include for-tablet-portrait-up {
+            width: 90%;
+            border: none;
+            // margin: 0;
+            padding: 0;
+        }
+
+        @include for-phone-only {
+            width: 100%;
+        }
         
         p {
             margin: 20px 0;
@@ -56,11 +69,25 @@ main {
         position: fixed;
         margin-top: 100px;
 
+        @include for-tablet-portrait-up {
+            width: 100%;
+            position: initial;
+            margin: 0;
+        }
+
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
+
+            @include for-tablet-portrait-up {
+                width: 70%;
+            }
+
+            @include for-phone-only {
+                width: 100%;
+            }
         }
         h3 {
             text-align: center;
