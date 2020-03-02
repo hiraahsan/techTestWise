@@ -4,6 +4,10 @@
 
 html {
     font-size: 62.5%;
+
+    @include for-phone-only {
+        font-size: 45%;
+    }
 }
 
 body {
