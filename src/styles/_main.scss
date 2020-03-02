@@ -134,7 +134,17 @@ main {
         }
 
         button {
-            border: none;
+            border: 2px solid $coolmint;
+            padding: 10px 20px;
+            border-radius: 15px;
+            background: $coolmint;
+            transition: 0.3s;
+            font-size: 2.5rem;
+
+            &:hover, &:focus, &:active {
+                background: $brunswick;
+                color: $coolmint;
+            }
             
 
         }
