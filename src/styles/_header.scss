@@ -13,7 +13,7 @@ header {
     max-width: 1400px;
     margin: 0 auto;
 
-    @include for-phone-only {
+    @include for-tablet-portrait-up {
         height: auto;
         flex-direction: column;
         padding-bottom: 0;
@@ -21,7 +21,7 @@ header {
     }
 
     svg {
-        @include for-phone-only {
+        @include for-tablet-portrait-up {
             width: 70%;
             margin: 0 auto;
         }
