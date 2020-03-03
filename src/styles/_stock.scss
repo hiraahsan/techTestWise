@@ -19,6 +19,7 @@
     padding: 10px 0;
     height: auto;
     right: 20px;
+    padding-left: 150px;
 
     @include for-tablet-portrait-up {
         width: 100%;
@@ -28,11 +29,12 @@
     .stockTicker {
         display: inline-block;
         white-space: nowrap;
+        animation-delay: 2s;
 
         animation-iteration-count: infinite;
         animation-timing-function: linear;
         animation-name: ticker;
-        animation-duration: 30s;
+        animation-duration: 20s;
 
         &:hover {
            animation-play-state: paused;

@@ -27,7 +27,6 @@ main {
         @include for-tablet-portrait-up {
             width: 90%;
             border: none;
-            // margin: 0;
             padding: 0;
             margin: 100px auto;
         }
@@ -63,22 +62,16 @@ main {
             text-transform: uppercase;
             font-size: 2.8rem;
             letter-spacing: 0.8rem;            line-height: 3rem;
-            // @include for-phone-only {
-            //     line-height: 25px;
-            // }
 
         }
     }
 
     .formSection {
-        // width: 40%;
-        // margin-left: 55px;
-        // right: 11%;
         left: 62%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        line-height: 30px;
+        line-height: 3rem;
         padding: 50px;
         position: fixed;
         margin-top: 100px;
@@ -150,6 +143,10 @@ main {
             width: 100%;
             border-radius: 10px;
 
+            @include for-tablet-portrait-up {
+                max-width: 90vw;
+            }
+
             &:focus, &:active {
                 border: 2px solid $succulent;
                 background: $coolmint;
@@ -209,6 +206,14 @@ main {
         select {
             width: 100%;
             margin: 10px 0;
+
+            @include for-tablet-portrait-up {
+                width: 70%;
+            }
+
+            @include for-phone-only {
+                width: 100%;
+            }
         }
     }
 }
