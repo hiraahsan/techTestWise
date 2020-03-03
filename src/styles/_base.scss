@@ -5,8 +5,16 @@
 html {
     font-size: 62.5%;
 
+    @include for-tablet-landscape-up {
+        font-size: 55%;
+    }
+
     @include for-phone-only {
-        font-size: 45%;
+        font-size: 46.875%;
+    }
+
+    @include for-big-desktop {
+        font-size: 78.125%;
     }
 }
 
