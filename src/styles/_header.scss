@@ -1,6 +1,6 @@
 header {
     position: fixed;
-    height: 10vh;
+    height: 12vh;
     padding-bottom: 50px;
     display: flex;
     justify-content: space-between;
@@ -19,8 +19,12 @@ header {
         padding-bottom: 0;
         border: none;
     }
-
+    @include for-big-desktop {
+        height: auto;
+    }
     svg {
+
+        margin-left: 20px;
         @include for-tablet-portrait-up {
             width: 70%;
             margin: 0 auto;
