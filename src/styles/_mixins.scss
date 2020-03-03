@@ -14,9 +14,7 @@ $brunswick: #072A24;
   @mixin for-tablet-landscape-up {
     @media (max-width: 1200px) { @content; }
   }
-  @mixin for-desktop-up {
-    @media (max-width: 1800px) { @content; }
-  }
-  @mixin for-big-desktop-up {
+
+  @mixin for-big-desktop {
     @media (min-width: 1800px) { @content; }
   }
